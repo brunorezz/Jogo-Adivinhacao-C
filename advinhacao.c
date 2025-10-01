@@ -9,6 +9,6 @@ int main() {
     printf("=========================================\n");
     printf("= Bem vindo ao nosso jogo de advinhação =\n");
     printf("=========================================\n");
-    printf("O número %d é o secreto", num);
+    printf("O número %d é o secreto\n", num);
     return 0;
 }
