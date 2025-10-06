@@ -6,7 +6,6 @@ int main() {
 
     int chute;
     int numerosecreto = 42;
-    int acertou = (chute == numerosecreto);
 
     printf("========================================\n");
     printf("= Seja bem vindo ao jogo de advinhação =\n");
@@ -14,17 +13,21 @@ int main() {
 
     printf("Qual é o seu chute? ");
     scanf("%d", &chute);
-
     printf("Seu chute foi %d\n", chute);
+
+    int acertou = (chute == numerosecreto);
 
     if (acertou) {
         printf("Parabéns! Você acertou!\n");
     } else {
-        if(chute > numerosecreto) {
+
+        int maior = chute > numerosecreto;
+        int menor = chute < numerosecreto;
+
+        if(maior) {
             printf("Seu número é maior que o número secreto");
         }
-        
-        if (chute < numerosecreto) {
+        if (menor) {
             printf("Seu número é menor que o número secreto");
         }
     }
