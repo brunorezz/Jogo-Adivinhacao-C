@@ -22,12 +22,10 @@ int main() {
     } else {
 
         int maior = chute > numerosecreto;
-        int menor = chute < numerosecreto;
 
         if(maior) {
             printf("Seu número é maior que o número secreto");
-        }
-        if (menor) {
+        } else {
             printf("Seu número é menor que o número secreto");
         }
     }
