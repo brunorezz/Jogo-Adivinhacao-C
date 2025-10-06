@@ -33,7 +33,7 @@ int main()
         {
             printf("Seu número é maior que o número secreto\n");
         }
-        else if (menor)
+        else
         {
             printf("Seu número é menor que o número secreto\n");
         }
