@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
+#define VIDAS 5
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -11,8 +12,8 @@ int main() {
     printf("= Seja bem vindo ao jogo de advinhação =\n");
     printf("========================================\n");
 
-    for(int i = 1; i <= 3; i++) {
-        printf("== Tentativa %d de 3 ==\n", i);
+    for(int i = 1; i <= VIDAS; i++) {
+        printf("== Tentativa %d de %d ==\n", i, VIDAS);
         printf("Qual é o seu chute? ");
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
