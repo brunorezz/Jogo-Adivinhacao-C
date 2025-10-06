@@ -12,6 +12,7 @@ int main() {
     printf("========================================\n");
 
     for(int i = 1; i <= 3; i++) {
+        printf("== Tentativa %d de 3 ==\n", i);
         printf("Qual é o seu chute? ");
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
@@ -20,7 +21,7 @@ int main() {
     
         if (acertou) {
             printf("Parabéns! Você acertou!\n");
-            return 0;
+            break;
         } else {
     
             int maior = chute > numerosecreto;
@@ -31,7 +32,7 @@ int main() {
                 printf("Seu número é menor que o número secreto\n");
             }
         }
-    
     }
+
     return 0;
 }
