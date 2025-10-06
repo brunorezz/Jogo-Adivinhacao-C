@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <windows.h>
-#define VIDAS 5
 
 int main()
 {
@@ -8,34 +7,44 @@ int main()
 
     int chute;
     int numerosecreto = 42;
+    int ganhou = 0;
+    int tentativas = 1;
 
     printf("========================================\n");
     printf("= Seja bem vindo ao jogo de advinhação =\n");
     printf("========================================\n");
 
-    for (int i = 1; i <= VIDAS; i++)
+    while (ganhou == 0)
     {
-        printf("== Tentativa %d de %d ==\n", i, VIDAS);
+        printf("== Tentativa %d ==\n", tentativas);
         printf("Qual é o seu chute? ");
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
 
-        int acertou = (chute == numerosecreto);
-        int maior = chute > numerosecreto;
-        int menor = chute < numerosecreto;
-
-        if (acertou)
+        if (chute < 0)
         {
-            printf("Parabéns! Você acertou!\n");
-            break;
-        }
-        else if (maior)
-        {
-            printf("Seu número é maior que o número secreto\n");
+            printf("Números negativos não são permitidos!\n");
+            continue;
         }
         else
         {
-            printf("Seu número é menor que o número secreto\n");
+            int acertou = (chute == numerosecreto);
+            int maior = chute > numerosecreto;
+
+            if (acertou)
+            {
+                printf("Parabéns! Você acertou!\n");
+                ganhou = 1;
+            }
+            else if (maior)
+            {
+                printf("Seu número é maior que o número secreto\n");
+            }
+            else
+            {
+                printf("Seu número é menor que o número secreto\n");
+            }
+            tentativas++;
         }
     }
 
