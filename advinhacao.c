@@ -23,8 +23,8 @@ int main()
     printf("=                                      =\n");
     printf("=     Qual nível você quer jogar?      =\n");
     printf("========================================\n");
-    printf("[ 1 - Fácil ][ 2 - Médio ][ 3 - Difícil ]\n\n");
-    printf("Escolha: ");
+    printf("\n[ 1 - Fácil ][ 2 - Médio ][ 3 - Difícil ]\n\n");
+    printf("# Escolha: ");
     scanf("%d", &nivel);
 
     switch (nivel)
