@@ -1,20 +1,46 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <windows.h>
 
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
 
+    int acertou = 0;
+    int vidas;
     int chute;
-    int numerosecreto = 42;
+    int segundos = time(0);
+    srand(segundos);
+    int numerogrande = rand();
+    int numerosecreto = numerogrande % 100;
     int tentativas = 1;
     double pontos = 1000;
+    int nivel;
 
     printf("========================================\n");
     printf("= Seja bem vindo ao jogo de advinhação =\n");
+    printf("=                                      =\n");
+    printf("=     Qual nível você quer jogar?      =\n");
     printf("========================================\n");
+    printf("[ 1 - Fácil ][ 2 - Médio ][ 3 - Difícil ]\n\n");
+    printf("Escolha: ");
+    scanf("%d", &nivel);
 
-    while (1)
+    if (nivel == 1)
+    {
+        vidas = 20;
+    }
+    else if (nivel == 2)
+    {
+        vidas = 15;
+    }
+    else
+    {
+        vidas = 6;
+    }
+
+    for (int i = 1; i <= vidas; i++)
     {
         printf("== Tentativa %d ==\n", tentativas);
         printf("Qual é o seu chute? ");
@@ -28,12 +54,11 @@ int main()
         }
         else
         {
-            int acertou = (chute == numerosecreto);
+            acertou = (chute == numerosecreto);
             int maior = chute > numerosecreto;
 
             if (acertou)
             {
-                printf("Parabéns! Você acertou!\n");
                 break;
             }
             else if (maior)
@@ -50,8 +75,15 @@ int main()
         }
     }
     printf("============================================\n");
-    printf("Você acertou em %d tentativas \n", tentativas);
-    printf("Total de pontos: %.2f \n", pontos);
+    if (acertou)
+    {
+        printf("[ VOCÊ GANHOU! ] [ Total de pontos: %.2f ]\n", pontos);
+        printf("[ Você acertou em %d tentativas ]\n", tentativas);
+    }
+    else
+    {
+        printf("Você perdeu, tente novamente!\n");
+    }
     printf("============================================\n");
 
     return 0;
