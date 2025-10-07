@@ -7,14 +7,13 @@ int main()
 
     int chute;
     int numerosecreto = 42;
-    int ganhou = 0;
     int tentativas = 1;
 
     printf("========================================\n");
     printf("= Seja bem vindo ao jogo de advinhação =\n");
     printf("========================================\n");
 
-    while (ganhou == 0)
+    while (1)
     {
         printf("== Tentativa %d ==\n", tentativas);
         printf("Qual é o seu chute? ");
@@ -34,7 +33,7 @@ int main()
             if (acertou)
             {
                 printf("Parabéns! Você acertou!\n");
-                ganhou = 1;
+                break;
             }
             else if (maior)
             {
