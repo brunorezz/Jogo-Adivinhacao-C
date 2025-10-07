@@ -47,6 +47,6 @@ int main()
             tentativas++;
         }
     }
-
+    printf("Você acertou em %d tentativas", tentativas);
     return 0;
 }
