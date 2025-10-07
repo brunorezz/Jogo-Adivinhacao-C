@@ -27,17 +27,17 @@ int main()
     printf("Escolha: ");
     scanf("%d", &nivel);
 
-    if (nivel == 1)
+    switch (nivel)
     {
+    case 1:
         vidas = 20;
-    }
-    else if (nivel == 2)
-    {
+        break;
+    case 2:
         vidas = 15;
-    }
-    else
-    {
+        break;
+    default:
         vidas = 6;
+        break;
     }
 
     for (int i = 1; i <= vidas; i++)
