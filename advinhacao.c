@@ -8,6 +8,7 @@ int main()
     int chute;
     int numerosecreto = 42;
     int tentativas = 1;
+    double pontos = 1000;
 
     printf("========================================\n");
     printf("= Seja bem vindo ao jogo de advinhação =\n");
@@ -44,8 +45,14 @@ int main()
                 printf("Seu número é menor que o número secreto\n");
             }
             tentativas++;
+            double pontosperdidos = (double)(chute - numerosecreto) / 2.0;
+            pontos -= pontosperdidos;
         }
     }
-    printf("Você acertou em %d tentativas", tentativas);
+    printf("============================================\n");
+    printf("Você acertou em %d tentativas \n", tentativas);
+    printf("Total de pontos: %.2f \n", pontos);
+    printf("============================================\n");
+    
     return 0;
 }
